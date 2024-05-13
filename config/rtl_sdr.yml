@@ -1,0 +1,30 @@
+# MIT License
+
+iq_input:
+  type: endpoint
+  endpoint:
+    type: tcp
+    mode: client
+    address: 192.168.1.1
+    port: 1234
+    bit_resolution: 8
+    queue_size: 1000
+
+packetizer:
+  frequency: 401_500_000  # [Hz]
+  bandwidth: 1_000_000  # [Hz]
+  sample_rate: 1_000_000  # [baud]
+  sample_count: 480
+  context_emission_frequency: 10.0  # [Hz]
+  queue_size: 1000
+
+vrt_output:
+  type: udp
+  mode: sender
+  local:
+    address: 0.0.0.0
+    port: 1234
+  remote:
+    address: 192.168.1.2
+    port: 50000
+  queue_size: 1000

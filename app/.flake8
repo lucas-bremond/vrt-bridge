@@ -1,0 +1,5 @@
+# MIT License
+
+[flake8]
+extend-ignore = E203, E302, E501
+exclude = .git, __pycache__, .pytest_cache, .mypy_cache, **/snapshots/

@@ -1,0 +1,29 @@
+# MIT License
+
+iq_input:
+  type: file
+  file:
+    format: wav
+    file_path: '/workspace/scenarios/recording.wav'
+    start_offset: 5.0  # [s]
+    duration: 5.0  # [s]
+    sample_count: 480
+    bit_resolution: 16
+
+packetizer:
+  frequency: 401_500_000  # [Hz]
+  bandwidth: 500_000  # [Hz]
+  sample_rate: 500_000  # [baud]
+  sample_count: 480
+  context_emission_frequency: 10.0  # [Hz]
+  queue_size: 1000
+
+vrt_output:
+  type: udp
+  mode: sender
+  local:
+    address: 0.0.0.0
+    port: 1234
+  remote:
+    address: 192.168.1.2
+    port: 50000
